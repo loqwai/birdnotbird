@@ -61,8 +61,8 @@ const useRandomBird = (): [Bird | undefined, () => void] => {
 
 const Chooser = ({ onAnswer }: { onAnswer: (answer: Choice) => void }) => {
   return (<>
-    <button className="Real" onClick={() => onAnswer('real_birds')}>Real</button>
-    <button className="Fake" onClick={() => onAnswer('fake_birds')}>Fake</button>
+    <button className="Real Choice" onClick={() => onAnswer('real_birds')}>Real</button>
+    <button className="Fake Choice" onClick={() => onAnswer('fake_birds')}>Fake</button>
   </>);
 }
 
@@ -81,7 +81,7 @@ function App() {
   return (
     <div className="App">
       <div className="Content">
-        <p>{bird.text}</p>
+        <h1 className="BirdName">{bird.text}</h1>
 
         {answer && (
           <div>
