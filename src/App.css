@@ -62,9 +62,11 @@ button.Fake {
 button.Try-Again {
   border: none;
   border-radius: 10px;
-  background-color: #F2E3BC;
-  font-size: 3em;
-  color: black;
-  padding: 0.3em;
+  font-size: 2em;
+  color: white;
+  padding: 0.6em;
+  margin: 0.3em;
   cursor: pointer;
+
+  background-color: #414535;
 }
