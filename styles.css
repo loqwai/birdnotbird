@@ -54,6 +54,7 @@ img {
   border-radius: 10px;
   max-height: 50vh;
   max-width: 50vw;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 512px) {
@@ -75,6 +76,7 @@ button.Choice {
   padding: 0.6em;
   margin: 0.3em;
   cursor: pointer;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
 button.Real {
@@ -82,7 +84,8 @@ button.Real {
 }
 
 button:hover {
-  filter: brightness(1.1)
+  filter: brightness(1.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 
 button.Fake {
@@ -99,4 +102,9 @@ button.Try-Again {
   cursor: pointer;
 
   background-color: #414535;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+button.Try-Again:hover {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
