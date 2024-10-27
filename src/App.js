@@ -23,6 +23,11 @@ export const App = () => {
     answer.value = "fake";
   };
 
+  const onClickReset = () => {
+    answer.value = null;
+    bird.value = pickRandomBird(birds.value);
+  };
+
   if (!bird.value) return null;
 
   return html`<div class="App">
@@ -32,11 +37,15 @@ export const App = () => {
         src="https://cdn.royvandewater.com/birdnotbird/${bird.value.filename}"
       />
 
+      ${answer.value &&
+      html`<${Result}
+        answer=${answer}
+        correctAnswer=${bird.value.isReal ? "real" : "fake"}
+      />`}
       ${answer.value
-        ? html`<${Result}
-            answer=${answer}
-            correctAnswer=${bird.value.isReal ? "real" : "fake"}
-          />`
+        ? html`<button className="Try-Again" onClick=${onClickReset}>
+            Try Again
+          </button>`
         : html`<${Chooser}
             onAnswerReal=${onAnswerReal}
             onAnswerFake=${onAnswerFake}
