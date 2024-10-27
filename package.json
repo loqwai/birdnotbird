@@ -1,0 +1,16 @@
+{
+  "name": "birdnotbird",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
