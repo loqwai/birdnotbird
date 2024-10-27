@@ -44,7 +44,8 @@ html, body, #root {
 img {
   margin-bottom: 2em;
   border-radius: 10px;
-  max-height: 25vh;
+  max-height: 50vh;
+  max-width: 50vw;
 }
 
 h1.BirdName {
