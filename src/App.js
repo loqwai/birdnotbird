@@ -2,14 +2,17 @@ import { html } from "htm/preact";
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 
-import { fetchRandomBird } from "./fetchRandomBird.js";
+import { pickRandomBird } from "./pickRandomBird.js";
+import { fetchBirds } from "./fetchBirds.js";
 
 export const App = () => {
-  const data = useSignal();
+  const birds = useSignal();
+  const bird = useSignal();
   const answer = useSignal();
 
   useEffect(async () => {
-    data.value = await fetchRandomBird();
+    birds.value = await fetchBirds();
+    bird.value = pickRandomBird(birds.value);
   }, []);
 
   const onAnswerReal = () => {
@@ -20,17 +23,20 @@ export const App = () => {
     answer.value = "fake";
   };
 
-  if (!data.value) return null;
+  if (!bird.value) return null;
 
   return html`<div class="App">
     <div class="Content">
-      <h1 class="BirdName">${data.value.bird}</h1>
+      <h1 class="BirdName">${bird.value.name}</h1>
       <img
-        src="https://cdn.royvandewater.com/birdnotbird/${data.value.filename}"
+        src="https://cdn.royvandewater.com/birdnotbird/${bird.value.filename}"
       />
 
       ${answer.value
-        ? html`<${Result} answer=${answer} data=${data} />`
+        ? html`<${Result}
+            answer=${answer}
+            correctAnswer=${bird.value.isReal ? "real" : "fake"}
+          />`
         : html`<${Chooser}
             onAnswerReal=${onAnswerReal}
             onAnswerFake=${onAnswerFake}
@@ -46,9 +52,7 @@ const Chooser = ({ onAnswerReal, onAnswerFake }) => {
   </div>`;
 };
 
-const Result = ({ answer, data }) => {
-  const correctAnswer = data.value.isReal ? "real" : "fake";
-
+const Result = ({ answer, correctAnswer }) => {
   if (answer.value === correctAnswer) {
     return html`<div>
       <h1>Correct!</h1>

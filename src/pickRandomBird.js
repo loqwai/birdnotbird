@@ -20,16 +20,12 @@ const toFilename = piped(
   replace(/$/, ".jpg")
 );
 
-export const fetchRandomBird = async () => {
+export const pickRandomBird = ({ realBirds, fakeBirds }) => {
   const isReal = Math.random() < 0.5;
+  const birds = isReal ? realBirds : fakeBirds;
 
-  const birds = isReal ? await fetchRealBirds() : await fetchFakeBirds();
+  const name = pipe(birds, sample1, capitalizeWords);
+  const filename = toFilename(name);
 
-  const bird = pipe(birds, sample1, capitalizeWords);
-
-  const filename = toFilename(bird);
-
-  console.log(bird, isReal, filename);
-
-  return { bird, isReal, filename };
+  return { name, isReal, filename };
 };
