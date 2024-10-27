@@ -25,8 +25,13 @@ html, body, #root {
   max-height: 100%;
 }
 
+h1, p {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  padding: 3em;
+  padding: 1em;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -35,6 +40,10 @@ html, body, #root {
 
 .App .Content {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
 
 .App .Content p {
@@ -42,10 +51,16 @@ html, body, #root {
 }
 
 img {
-  margin-bottom: 2em;
   border-radius: 10px;
   max-height: 50vh;
   max-width: 50vw;
+}
+
+@media (max-width: 512px) {
+  img {
+    max-height: 90vh;
+    max-width: 90vw;
+  }
 }
 
 h1.BirdName {
