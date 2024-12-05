@@ -34,6 +34,10 @@ export const App = () => {
     window.history.pushState({}, "", buildUrl(currentBird.value.name));
   };
 
+  const onClickCopy = () => {
+    navigator.clipboard.writeText(buildFullUrl(currentBird.value.name));
+  };
+
   if (!currentBird.value) return null;
 
   return html`<div class="App">
@@ -50,9 +54,11 @@ export const App = () => {
         correctAnswer=${currentBird.value.isReal ? "real" : "fake"}
       />`}
       ${answer.value
-        ? html`<button className="Try-Again" onClick=${onClickReset}>
-            Try Again
-          </button>`
+        ? html`<${NextActions}
+            url=${buildFullUrl(currentBird.value.name)}
+            onClickCopy=${onClickCopy}
+            onClickReset=${onClickReset}
+          />`
         : html`<${Chooser}
             onAnswerReal=${onAnswerReal}
             onAnswerFake=${onAnswerFake}
@@ -65,11 +71,31 @@ const buildUrl = (name) => {
   return `/?${new URLSearchParams({ bird: toKebabCase(name) }).toString()}`;
 };
 
+const buildFullUrl = (name) => {
+  return `${window.location.origin}${buildUrl(name)}`;
+};
+
 const Chooser = ({ onAnswerReal, onAnswerFake }) => {
   return html`<div>
     <button className="Real Choice" onClick=${onAnswerReal}>Real</button>
     <button className="Fake Choice" onClick=${onAnswerFake}>Fake</button>
   </div>`;
+};
+
+const NextActions = ({ onClickReset, url, onClickCopy }) => {
+  return html`<div class="Next-Actions">
+    <button className="Try-Again" onClick=${onClickReset}>Try Again</button>
+    <${ShareUrl} url=${url} onClickCopy=${onClickCopy} />
+  </div>`;
+};
+
+const ShareUrl = ({ url, onClickCopy }) => {
+  return html`
+    <div class="Share-Url">
+      <input type="text" disabled value=${url} />
+      <button onClick=${onClickCopy}>Copy</button>
+    </div>
+  `;
 };
 
 const Result = ({ answer, correctAnswer }) => {
