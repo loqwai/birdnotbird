@@ -13,7 +13,7 @@ const replace = (pattern, replacement) => (str) => {
 const sample1 = piped(sample(1), first);
 const capitalizeWords = piped(split(" "), map(capitalize()), join(" "));
 
-const toFilename = piped(
+export const toFilename = piped(
   replaceAll(" ", "-"),
   replaceAll("'", ""),
   toLowerCase,

@@ -1,3 +1,7 @@
+/**
+ * Fetch the birds from the server
+ * @returns {Promise<{realBirds: string[], fakeBirds: string[]}>}
+ */
 export const fetchBirds = async () => {
   const [realBirds, fakeBirds] = await Promise.all([
     fetchRealBirds(),

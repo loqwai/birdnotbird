@@ -1,18 +1,23 @@
 import { html } from "htm/preact";
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
+import { toKebabCase } from "remeda";
 
-import { pickRandomBird } from "./pickRandomBird.js";
+import { pickBird } from "./pickBird.js";
 import { fetchBirds } from "./fetchBirds.js";
 
 export const App = () => {
-  const birds = useSignal();
-  const bird = useSignal();
+  const allBirds = useSignal();
+  const currentBird = useSignal();
   const answer = useSignal();
 
   useEffect(async () => {
-    birds.value = await fetchBirds();
-    bird.value = pickRandomBird(birds.value);
+    allBirds.value = await fetchBirds();
+
+    const url = new URL(window.location);
+    const urlBirdId = url.searchParams.get("bird");
+    currentBird.value = pickBird(allBirds.value, urlBirdId);
+    window.history.replaceState({}, "", buildUrl(currentBird.value.name));
   }, []);
 
   const onAnswerReal = () => {
@@ -25,22 +30,24 @@ export const App = () => {
 
   const onClickReset = () => {
     answer.value = null;
-    bird.value = pickRandomBird(birds.value);
+    currentBird.value = pickBird(allBirds.value, undefined);
+    window.history.pushState({}, "", buildUrl(currentBird.value.name));
   };
 
-  if (!bird.value) return null;
+  if (!currentBird.value) return null;
 
   return html`<div class="App">
     <div class="Content">
-      <h1 class="BirdName">${bird.value.name}</h1>
+      <h1 class="BirdName">${currentBird.value.name}</h1>
       <img
-        src="https://cdn.royvandewater.com/birdnotbird/${bird.value.filename}"
+        src="https://cdn.royvandewater.com/birdnotbird/${currentBird.value
+          .filename}"
       />
 
       ${answer.value &&
       html`<${Result}
         answer=${answer}
-        correctAnswer=${bird.value.isReal ? "real" : "fake"}
+        correctAnswer=${currentBird.value.isReal ? "real" : "fake"}
       />`}
       ${answer.value
         ? html`<button className="Try-Again" onClick=${onClickReset}>
@@ -52,6 +59,10 @@ export const App = () => {
           /> `}
     </div>
   </div>`;
+};
+
+const buildUrl = (name) => {
+  return `/?${new URLSearchParams({ bird: toKebabCase(name) }).toString()}`;
 };
 
 const Chooser = ({ onAnswerReal, onAnswerFake }) => {
