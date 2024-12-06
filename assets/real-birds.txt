@@ -26,7 +26,6 @@ Checker-throated stipplethroat
 African pygmy goose
 Crested doradito
 Zapata sparrow
-Moluccan monarch
 Yellow-vented flowerpecker
 Yellow-billed nuthatch
 Grey-sided flowerpecker
@@ -97,7 +96,6 @@ Golden-crowned warbler
 Common raven
 Ruddy kingfisher
 Striped cuckoo
-Para foliage-gleaner
 Andean goose
 Grey-fronted green pigeon
 Anthony's nightjar
@@ -122,8 +120,6 @@ Huia
 Rufous-backed Inca finch
 Red-billed oxpecker
 Curlew sandpiper
-Baliem whistler
-Zapata rail
 Olive warbler
 Red-throated barbet
 Black-breasted myzomela
@@ -148,12 +144,10 @@ Mascarene swiftlet
 Inaccessible Island finch
 Purple-chested hummingbird
 Hose's partridge
-Western nicator
 Common blackbird
 Black-and-buff woodpecker
 Brown trembler
 Grey-headed albatross
-Berlepsch's canastero
 Nelicourvi weaver
 Purplish-backed jay
 Macaroni penguin
@@ -162,7 +156,6 @@ Yellow-shouldered amazon
 Brown-backed honeyeater
 Banded fruit dove
 Black-and-yellow phainoptila
-Gould's jewelfront
 Pallas's fish eagle
 Black-rumped buttonquail
 Brown tanager
@@ -189,7 +182,6 @@ Western spinebill
 Lesser Antillean saltator
 Carunculated caracara
 Yungas tody-tyrant
-Helmeted guineafowl
 Clay-colored thrush
 Black guineafowl
 Tit berrypecker
@@ -257,7 +249,6 @@ Green barbet
 Grey cuckooshrike
 Socotra scops owl
 African finfoot
-Scaly chatterer
 Spangled coquette
 Golden-backed weaver
 Southern carmine bee-eater
@@ -269,7 +260,6 @@ Ochre-cheeked spinetail
 Lesser short-toed lark
 Swallow-winged puffbird
 Dot-backed antbird
-Manus monarch
 Rio Negro gnatcatcher
 Northern rough-winged swallow
 Bar-breasted firefinch
@@ -278,13 +268,11 @@ Azure-naped jay
 Burchell's coucal
 White-faced cuckoo-dove
 Delta Amacuro softtail
-Northern dark newtonia
 Donaldson Smith's nightjar
 Hammond's flycatcher
 Chestnut-throated flycatcher
 Rothschild's swift
 Chestnut-crowned becard
-Ayacucho thistletail
 Dusky indigobird
 Chestnut-crowned warbler
 Variable hawk

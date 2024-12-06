@@ -17,7 +17,6 @@ Arabian kingfisher
 Scissor-tailed drongo
 Flappet Grey Pinyon aracari
 White-fronted kōkako
-Yungas kite
 Nankeen Hooded fulvetta
 storm hornbill
 wood Black-winged Green monarch
@@ -34,7 +33,6 @@ Red-browed blue Tristram's hermit
 Black-and-yellow flycatcher
 Tawny-crowned Correndera Cloven-feathered tanager
 pygmy bald batis
-Loggerhead gnateater
 Lanceolated flycatcher
 Sclater's hemispingus
 Black-chinned Yellow-winged North spinetail
@@ -100,7 +98,6 @@ Pale-headed golden Yellow-chinned babbler
 Ivory-billed parrot
 Black-billed manakin
 African Elegant flycatcher
-Pink-necked hyliota
 Lawrence's Slate-colored barbet
 Southern Pfrimer's tyrannulet
 Short-billed Band-tailed weaver
@@ -171,7 +168,6 @@ Sooty treehunter
 Chinese greenbul
 Black-headed seedeater
 Olive-backed Gunnison white-fringed cisticola
-Metallic jery
 ground Dark-throated spinetail
 Chestnut-backed Red-flanked Chestnut-bellied booby
 Sumatran Spotted nightjar
@@ -190,7 +186,6 @@ Georgia triller
 Freckled Yellow-rumped Pare owlet-nightjar
 Blue-fronted weaver
 bush scrubfowl
-Macleay's monarch
 White-necked Scaled Chestnut-crowned tanager
 Indian imperial harrier
 ground White-breasted silverbill
@@ -227,7 +222,6 @@ Scarlet-banded Golden-crowned bowerbird
 Buff-throated Blue Hudson's negrito
 Bar-tailed warbler
 Scaly-breasted plover
-Brown-headed sooty Butterfly citril
 Tablas duck
 Flores Least Congo weaver
 Guatemalan African Black-headed prinia
@@ -236,7 +230,6 @@ Comoro Tibetan wattle-eye
 White-tailed White-browed palm vireo
 Black-collared Todd's antthrush
 White-bellied fire-eye
-Micronesian Papuan guan
 Scarlet-shouldered †Bishop's Dalat owl
 Buff-breasted Bornean fairywren
 Collared Greater goose
@@ -263,7 +256,6 @@ Kupe Turquoise pygmy kestrel
 Bronzed warbler
 Mountain magpie
 Collared batis
-Madagascan vanga
 White-bridled Hodgson's eagle-owl
 Swinhoe's Citrine parakeet
 Rainbow woodpecker
@@ -271,7 +263,6 @@ Tamaulipas Maroon-naped Black-eared parakeet
 Heuglin's Violet-green Spotted woodstar
 Andaman Green-fronted Grimwood's lovebird
 Bar-breasted pigeon
-Brushland Black-fronted Fischer's monarch
 Hooded Rufous-chested Crested antpitta
 Zapata Moustached Streaked tit-spinetail
 Verde White-throated stint
