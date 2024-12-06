@@ -35,6 +35,13 @@ export const pickBird = (allBirds, urlBirdId) => {
   throw new Error(`Bird not found: ${urlBirdId}`);
 };
 
+/**
+ * Find a bird by its id.
+ *
+ * @param {string[]} birds
+ * @param {string} id
+ * @returns {string | undefined}
+ */
 const findById = (birds, id) => {
   return birds.find((bird) => toKebabCase(bird) === id);
 };
