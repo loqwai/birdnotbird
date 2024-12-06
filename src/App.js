@@ -120,7 +120,7 @@ const Result = ({ answer, correctAnswer }) => {
   }
 
   return html`<div>
-    <h1>Wrong!</h1>
+    <h1>Incorrect</h1>
     <p>This bird is actually <strong>${correctAnswer}</strong>!</p>
   </div>`;
 };
