@@ -142,3 +142,28 @@ button.Try-Again:hover {
   }
 }
 
+
+.Shared-Url-Toast {
+  width: 100vw;
+  height: 2em;
+  background-color: rgba(97, 137, 133, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  padding: 0.5em;
+  transition: bottom 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+
+  &.show {
+    bottom: 0;
+  }
+}
+

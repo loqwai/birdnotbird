@@ -10,6 +10,7 @@ export const App = () => {
   const allBirds = useSignal();
   const currentBird = useSignal();
   const answer = useSignal();
+  const showSharedUrl = useSignal(false);
 
   useEffect(async () => {
     allBirds.value = await fetchBirds();
@@ -36,11 +37,19 @@ export const App = () => {
 
   const onClickCopy = () => {
     navigator.clipboard.writeText(buildFullUrl(currentBird.value.name));
+    showSharedUrl.value = true;
+    setTimeout(() => {
+      showSharedUrl.value = false;
+    }, 2000);
+  };
+
+  const onClickOutside = () => {
+    showSharedUrl.value = false;
   };
 
   if (!currentBird.value) return null;
 
-  return html`<div class="App">
+  return html`<div class="App" onClick=${onClickOutside}>
     <div class="Content">
       <h1 class="BirdName">${currentBird.value.name}</h1>
       <img
@@ -56,13 +65,17 @@ export const App = () => {
       ${answer.value
         ? html`<${NextActions}
             url=${buildFullUrl(currentBird.value.name)}
-            onClickCopy=${onClickCopy}
+            onClickCopy=${(event) => {
+              event.stopPropagation();
+              return onClickCopy(event);
+            }}
             onClickReset=${onClickReset}
           />`
         : html`<${Chooser}
             onAnswerReal=${onAnswerReal}
             onAnswerFake=${onAnswerFake}
           /> `}
+      <${SharedUrlToast} show=${showSharedUrl} />
     </div>
   </div>`;
 };
@@ -109,5 +122,11 @@ const Result = ({ answer, correctAnswer }) => {
   return html`<div>
     <h1>Wrong!</h1>
     <p>This bird is actually <strong>${correctAnswer}</strong>!</p>
+  </div>`;
+};
+
+const SharedUrlToast = ({ show }) => {
+  return html`<div class="Shared-Url-Toast ${show.value ? "show" : ""}">
+    Copied to clipboard
   </div>`;
 };
